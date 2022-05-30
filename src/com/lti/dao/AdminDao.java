@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.lti.bean.Professor;
+import com.lti.bean.Student;
 import com.lti.service.impl.AdminServiceImpl;
 
 public class AdminDao implements AdminDaoInterface {
@@ -47,7 +48,8 @@ public class AdminDao implements AdminDaoInterface {
 
 	@Override
 	public void approveStudents() {
-
+		
+		
 	}
 
 	@Override

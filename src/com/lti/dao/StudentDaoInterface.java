@@ -1,7 +1,7 @@
-package com.lti.service;
+package com.lti.dao;
 
-public interface StudentService {
-
+public interface StudentDaoInterface {
+	
 	public void registerCourses();
 
 	public void viewReportCard();
@@ -11,8 +11,5 @@ public interface StudentService {
 	public void dropCourse();
 
 	public void viewGrades();
-	
-	public void addStudent();
-	
-	public void studentLogin();
+
 }

@@ -2,7 +2,7 @@ package com.lti.service.impl;
 
 import java.util.Scanner;
 
-import com.lti.application.AdminApplication;
+import com.lti.application.CRSApplication;
 import com.lti.bean.Admin;
 import com.lti.dao.AdminDao;
 import com.lti.service.AdminService;
@@ -10,6 +10,7 @@ import com.lti.service.AdminService;
 public class AdminServiceImpl implements AdminService {
 
 	Admin admin = new Admin();
+	
 
 	@Override
 	public void addProfessor() {
@@ -20,12 +21,14 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public void approveStudents() {
 		// TODO Auto-generated method stub
+		//adminDao.approveStudents();
 
 	}
 
 	@Override
 	public void generateReportCard() {
 		// TODO Auto-generated method stub
+		
 
 	}
 
@@ -52,7 +55,7 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public void login() {
-		AdminApplication adminApplication = new AdminApplication();
+		CRSApplication adminApplication = new CRSApplication();
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter UserName :");
@@ -65,7 +68,7 @@ public class AdminServiceImpl implements AdminService {
 
 		} else {
 			System.out.println(" In valid userName of password \n");
-			adminApplication.menu(1);
+			adminApplication.AdminMenu();;
 		}
 
 	}
