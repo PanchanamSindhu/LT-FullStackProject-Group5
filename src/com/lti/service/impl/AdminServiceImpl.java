@@ -33,7 +33,7 @@ public class AdminServiceImpl implements AdminService {
 		// TODO Auto-generated method stub
 		AdminDao adminDao = new AdminDao();
 		adminDao.generateReportCard();
-
+		loginList();
 	}
 
 	@Override
@@ -51,6 +51,7 @@ public class AdminServiceImpl implements AdminService {
 		System.out.println(" 3 - Generate Report Card ");
 		System.out.println(" 4 - Add Course ");
 		System.out.println(" 5 - Remove Course ");
+		System.out.println(" 6 - Logout ");
 		int a = sc.nextInt();
 		List<Course> course=new ArrayList<Course>();
 
@@ -65,6 +66,9 @@ public class AdminServiceImpl implements AdminService {
 		} else if (a == 5) {
 
 			removeCourse(course);
+		}else if (a == 6) {
+
+			CRSApplication.optionSelect();
 		}
 
 	}

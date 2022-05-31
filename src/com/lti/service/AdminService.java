@@ -4,6 +4,12 @@ import java.util.List;
 
 import com.lti.bean.Course;
 
+/**
+ * Interface class that has the following methods.
+ * 
+ * @author Group5
+ * @since 05-31-2022
+ */
 public interface AdminService {
 
 	public void addProfessor();

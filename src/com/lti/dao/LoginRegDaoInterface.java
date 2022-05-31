@@ -8,8 +8,10 @@ import java.util.List;
 import com.lti.bean.Login;
 
 /**
- * @author user209
- *
+ * Interface class that has the following methods.
+ * 
+ * @author Group5
+ * @since 05-31-2022
  */
 public interface LoginRegDaoInterface {
 	

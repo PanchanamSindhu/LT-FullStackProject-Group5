@@ -9,11 +9,17 @@ import com.lti.bean.Course;
 import com.lti.bean.Professor;
 import com.lti.bean.Student;
 import com.lti.service.impl.AdminServiceImpl;
+import com.lti.service.impl.StudentServiceImpl;
 
 public class AdminDao implements AdminDaoInterface {
 
 	AdminServiceImpl adminServiceImpl = new AdminServiceImpl();;
 
+	/**
+	 * 
+	 * This method allow to add professors .
+	 * return nothing
+	 */
 	@Override
 	public void addProfessor() {
 		System.out.flush();
@@ -53,13 +59,25 @@ public class AdminDao implements AdminDaoInterface {
 
 	}
 
+	/**
+	 * 
+	 * This method allows user to generate ReportCard .
+	 * return nothing
+	 */
 	@Override
 	public void generateReportCard() {
 
-		// TODO Auto-generated method stub
+		StudentServiceImpl st = new StudentServiceImpl();
+		ArrayList<String> al = new ArrayList<String>();
+		al = st.viewreportcard();
 
 	}
 
+	/**
+	 * 
+	 * This method allows user to add course . 
+	 * return List
+	 */
 	@Override
 	public List<Course> addCourse() {
 		List<Course> courseList = new ArrayList<Course>();
@@ -94,11 +112,16 @@ public class AdminDao implements AdminDaoInterface {
 		} else if (b == 2) {
 			adminServiceImpl.loginList();
 		}
-		System.out.println("inside add course"+courseList);
+		System.out.println("inside add course" + courseList);
 		return courseList;
 
 	}
 
+	/**
+	 * 
+	 * This method allows user to remove course . 
+	 * return nothing
+	 */
 	@Override
 	public void removeCourse(List<Course> couserList) {
 

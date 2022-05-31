@@ -3,7 +3,6 @@
  */
 package com.lti.application;
 
-
 import java.util.List;
 import java.util.Scanner;
 
@@ -13,13 +12,20 @@ import com.lti.service.impl.AdminServiceImpl;
 import com.lti.service.impl.StudentServiceImpl;
 
 /**
- * @author user211
+ * The CRS program implements an application that simply allows the user to
+ * perform Specific actions by taking Input from console.
  *
+ * @author group5
+ * @since 2022-05-31
  */
 public class CRSApplication {
 
 	/**
-	 * @param args
+	 * This is the main method which makes use of option select method.
+	 * 
+	 * @param args Unused.
+	 * @return Nothing.
+	 * 
 	 */
 
 	public static void main(String[] args) {
@@ -29,12 +35,18 @@ public class CRSApplication {
 
 	}
 
+	/**
+	 * This method is used display menu 
+	 * @param unused
+	 * @return nothing.
+	 */
 	public static void optionSelect() {
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("1. Login :");
 		System.out.println("2. New Registartion :");
 		System.out.println("3. Forget Password :");
+		System.out.println("4. Exit :");
 		System.out.println("Pleace Select Your Choice :\n");
 		int input = sc.nextInt();
 		switch (input) {
@@ -51,7 +63,20 @@ public class CRSApplication {
 			updatePassword();
 			break;
 
+		case 4:
+			Exit();
+			break;
+
 		}
+	}
+	/**
+	 * This method is used to close application.
+	 * @param unused
+	 * @return nothing.
+	 */
+	private static void Exit() {
+		System.out.println("Application Closed");
+
 	}
 
 	public static void login() {

@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import com.lti.application.CRSApplication;
 import com.lti.dao.StudentDao;
 import com.lti.service.StudentService;
 
@@ -14,46 +15,44 @@ public class StudentServiceImpl implements StudentService {
 		// TODO Auto-generated method stub
 		StudentDao ssd = new StudentDao();
 		ssd.registerCourse(input);
-		
+
 	}
 
 	@Override
 	public ArrayList<String> viewreportcard() {
 		StudentDao ssd = new StudentDao();
-		Scanner sc=new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter your ID : ");
-		int id=sc.nextInt();
-		ArrayList<String> al=ssd.viewreportcard(id);
+		int id = sc.nextInt();
+		ArrayList<String> al = new ArrayList<String>();
+		al=ssd.viewreportcard(id);
 		System.out.println(al);
-		return  al;
-		
+		return al;
+
 	}
 
 	@Override
 	public void viewCatalog() {
-    	
-    	StudentDao ssd = new StudentDao();
-    	ArrayList resultlist = (ArrayList)ssd.viewCatalog();
-    	
-    	System.out.println(" Courses:");
-    	for(int i=0;i<resultlist.size();i++){
-    		System.out.println(i+1+"."+resultlist.get(i));
-    	}
-    	
-    	
-    }
+
+		StudentDao ssd = new StudentDao();
+		ArrayList resultlist = (ArrayList) ssd.viewCatalog();
+
+		System.out.println(" Courses:");
+		for (int i = 0; i < resultlist.size(); i++) {
+			System.out.println(i + 1 + "." + resultlist.get(i));
+		}
+
+	}
 
 	@Override
 	public void payFee() {
 		// TODO Auto-generated method stub
 		StudentDao ssd = new StudentDao();
-		Scanner sc=new Scanner(System.in);
+		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter your ID : ");
-		int i=sc.nextInt();
-		
+		int i = sc.nextInt();
 		ssd.payFee(i);
-		studentMenu();
-		
+
 	}
 
 	@Override
@@ -61,15 +60,17 @@ public class StudentServiceImpl implements StudentService {
 		// TODO Auto-generated method stub
 		StudentDao ssd = new StudentDao();
 		ArrayList a = new ArrayList();
-		a=ssd.course();
-		studentMenu();
+		a = ssd.course();
+
 	}
+
 	public void studentMenu() {
 
 		LocalDateTime localDateTime = LocalDateTime.now();
 		System.out.println("Student Logged in at:  " + localDateTime);
 		System.out.println("Menu");
-		System.out.println("1.Register a Course\n2.View GradeCard\n3.View Catalog\n4.Add/Delete Course \n5.Pay Fee");
+		System.out.println(
+				"1.Register a Course\n2.View GradeCard\n3.View Catalog\n4.Add/Delete Course \n5.Pay Fee\n6.Exit ");
 		Scanner sc = new Scanner(System.in);
 		int input = sc.nextInt();
 
@@ -99,15 +100,20 @@ public class StudentServiceImpl implements StudentService {
 		case 4:
 			StudentServiceImpl ssc3 = new StudentServiceImpl();
 			ssc3.course();
+			studentMenu();
 			break;
 
 		case 5:
 			StudentServiceImpl ssc4 = new StudentServiceImpl();
 			ssc4.payFee();
+			studentMenu();
+			break;
+		case 6:
+			CRSApplication.optionSelect();
 			break;
 
 		}
 
-	
 	}
-	}
+
+}
