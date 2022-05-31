@@ -1,16 +1,18 @@
 package com.lti.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import com.lti.application.CRSApplication;
 import com.lti.bean.Admin;
+import com.lti.bean.Course;
 import com.lti.dao.AdminDao;
 import com.lti.service.AdminService;
 
 public class AdminServiceImpl implements AdminService {
 
 	Admin admin = new Admin();
-	
 
 	@Override
 	public void addProfessor() {
@@ -21,20 +23,24 @@ public class AdminServiceImpl implements AdminService {
 	@Override
 	public void approveStudents() {
 		// TODO Auto-generated method stub
-		//adminDao.approveStudents();
-
+		// adminDao.approveStudents();
+		AdminDao adminDao = new AdminDao();
+		adminDao.approveStudents();
 	}
 
 	@Override
 	public void generateReportCard() {
 		// TODO Auto-generated method stub
-		
+		AdminDao adminDao = new AdminDao();
+		adminDao.generateReportCard();
 
 	}
 
 	@Override
-	public void addCourse() {
+	public List<Course> addCourse() {
 		// TODO Auto-generated method stub
+		AdminDao adminDao = new AdminDao();
+		return adminDao.addCourse();
 
 	}
 
@@ -68,7 +74,8 @@ public class AdminServiceImpl implements AdminService {
 
 		} else {
 			System.out.println(" In valid userName of password \n");
-			adminApplication.AdminMenu();;
+			adminApplication.AdminMenu();
+			;
 		}
 
 	}
@@ -79,7 +86,9 @@ public class AdminServiceImpl implements AdminService {
 		System.out.println(" 2 - Approve Students");
 		System.out.println(" 3 - Generate Report Card ");
 		System.out.println(" 4 - Add Course ");
+		System.out.println(" 5 - Remove Course ");
 		int a = sc.nextInt();
+		List<Course> course=new ArrayList<Course>();
 
 		if (a == 1) {
 			addProfessor();
@@ -88,8 +97,21 @@ public class AdminServiceImpl implements AdminService {
 		} else if (a == 3) {
 			generateReportCard();
 		} else if (a == 4) {
-			addCourse();
+			 course = addCourse();
+		} else if (a == 5) {
+
+			removeCourse(course);
 		}
+
+	}
+
+	@Override
+	public void removeCourse(List<Course> course) {
+		
+		// TODO Auto-generated method stub
+		AdminDao adminDao = new AdminDao();
+		System.out.println("inside remove");
+		adminDao.removeCourse(course);
 
 	}
 

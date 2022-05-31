@@ -1,5 +1,9 @@
 package com.lti.service;
 
+import java.util.List;
+
+import com.lti.bean.Course;
+
 public interface AdminService {
 
 	public void addProfessor();
@@ -8,7 +12,9 @@ public interface AdminService {
 
 	public void generateReportCard();
 
-	public void addCourse();
+	public List<Course> addCourse();
+	
+	public void removeCourse(List<Course> l);
 
 	public void addUser();
 

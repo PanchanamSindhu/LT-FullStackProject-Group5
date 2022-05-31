@@ -1,5 +1,11 @@
 package com.lti.dao;
 
+import java.util.List;
+
+import com.lti.bean.Course;
+
+
+
 public interface AdminDaoInterface {
 
 	public void addProfessor();
@@ -8,6 +14,9 @@ public interface AdminDaoInterface {
 
 	public void generateReportCard();
 
-	public void addCourse();
+	public List addCourse();
+	
+	public void removeCourse(List<Course> l);
+	
 
 }
