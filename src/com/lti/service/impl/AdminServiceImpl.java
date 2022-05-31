@@ -69,6 +69,7 @@ public class AdminServiceImpl implements AdminService {
 
 	}
 
+	
 	@Override
 	public void removeCourse(List<Course> course) {
 		AdminDao adminDao = new AdminDao();
