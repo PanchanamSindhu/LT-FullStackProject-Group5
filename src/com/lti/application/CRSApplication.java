@@ -65,7 +65,6 @@ public class CRSApplication {
 		String password = sc.next();
 		List<Login> loginList = loginRegDao.verifyLogin();
 		for (Login login : loginList) {
-			System.out.println(login.getUserName());
 			if (login.getUserName().equalsIgnoreCase(userName) && (password.equals(login.getPassword()))) {
 				System.out.println("Login Successfull");
 				if (login.getType().equalsIgnoreCase("Admin")) {
