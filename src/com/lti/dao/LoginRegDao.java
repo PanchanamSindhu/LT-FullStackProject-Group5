@@ -48,15 +48,15 @@ public class LoginRegDao implements LoginRegDaoInterface {
 		login.setId(id);
 		
 		System.out.println(" Enter type ");
-		String type=sc.nextLine();
+		String type=sc.next();
 		login.setType(type);
 		
 		System.out.println(" Enter UserName ");
-		String userName=sc.nextLine();
+		String userName=sc.next();
 		login.setUserName(userName);
 		
 		System.out.println(" Enter password ");
-		String password=sc.nextLine();
+		String password=sc.next();
 		login.setPassword(password);
 		
 		System.out.println(" Registration Sucessfull !! ");

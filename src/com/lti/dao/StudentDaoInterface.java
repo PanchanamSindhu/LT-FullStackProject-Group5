@@ -1,15 +1,19 @@
 package com.lti.dao;
 
+import java.util.ArrayList;
+
 public interface StudentDaoInterface {
-	
-	public void registerCourses();
 
-	public void viewReportCard();
+	public void registerCourse(String inp);
 
-	public void viewCatalog();
+	public ArrayList viewreportcard(int i);
 
-	public void dropCourse();
+	public ArrayList viewCatalog();
 
-	public void viewGrades();
+	public void payFee();
+
+	public void viewFee(int f);
+
+	public ArrayList course();
 
 }
