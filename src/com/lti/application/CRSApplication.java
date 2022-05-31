@@ -75,6 +75,7 @@ public class CRSApplication {
 				} else if (login.getType().equalsIgnoreCase("Professor")) {
 					System.out.println("professor");
 				}
+				
 			}} 
 		}
 
