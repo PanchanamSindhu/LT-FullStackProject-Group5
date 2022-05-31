@@ -44,8 +44,15 @@ public class StudentServiceImpl implements StudentService {
     }
 
 	@Override
-	public void payFee(int id) {
+	public void payFee() {
 		// TODO Auto-generated method stub
+		StudentDao ssd = new StudentDao();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter your ID : ");
+		int i=sc.nextInt();
+		
+		ssd.payFee(i);
+		studentMenu();
 		
 	}
 
@@ -55,7 +62,7 @@ public class StudentServiceImpl implements StudentService {
 		StudentDao ssd = new StudentDao();
 		ArrayList a = new ArrayList();
 		a=ssd.course();
-		
+		studentMenu();
 	}
 	public void studentMenu() {
 
@@ -96,7 +103,7 @@ public class StudentServiceImpl implements StudentService {
 
 		case 5:
 			StudentServiceImpl ssc4 = new StudentServiceImpl();
-		//	ssc4.payFee(id);
+			ssc4.payFee();
 			break;
 
 		}

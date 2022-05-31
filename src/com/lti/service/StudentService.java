@@ -10,7 +10,7 @@ public interface StudentService {
 
 	public void viewCatalog();
 
-	public void payFee(int id);
+	public void payFee();
 
 	public void course();
 

@@ -10,9 +10,9 @@ public interface StudentDaoInterface {
 
 	public ArrayList viewCatalog();
 
-	public void payFee();
+	public void payFee(int i);
 
-	public void viewFee(int f);
+	public void viewFee();
 
 	public ArrayList course();
 
