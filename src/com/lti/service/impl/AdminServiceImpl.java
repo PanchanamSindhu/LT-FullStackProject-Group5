@@ -44,29 +44,6 @@ public class AdminServiceImpl implements AdminService {
 
 	}
 
-
-
-//	@Override
-//	public void login() {
-//		CRSApplication adminApplication = new CRSApplication();
-//
-//		Scanner sc = new Scanner(System.in);
-//		System.out.println("Enter UserName :");
-//		String userName = sc.next();
-//		System.out.println("Enter Password :");
-//		String password = sc.next();
-//		if ((userName.equals(admin.getUserName())) && (password.equals(admin.getPassWord()))) {
-//			System.out.println("Login Successfull");
-//			loginList();
-//
-//		} else {
-//			System.out.println(" In valid userName of password \n");
-//			adminApplication.AdminMenu();
-//			
-//		}
-//
-//	}
-
 	public void loginList() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println(" 1 - Add Professor ");
@@ -94,8 +71,6 @@ public class AdminServiceImpl implements AdminService {
 
 	@Override
 	public void removeCourse(List<Course> course) {
-		
-		// TODO Auto-generated method stub
 		AdminDao adminDao = new AdminDao();
 		System.out.println("inside remove");
 		adminDao.removeCourse(course);
