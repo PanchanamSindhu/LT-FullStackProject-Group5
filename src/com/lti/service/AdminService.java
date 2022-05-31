@@ -16,8 +16,4 @@ public interface AdminService {
 	
 	public void removeCourse(List<Course> l);
 
-	public void addUser();
-
-	public void login();
-
 }

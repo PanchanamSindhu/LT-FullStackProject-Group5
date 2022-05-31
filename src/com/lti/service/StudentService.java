@@ -11,8 +11,5 @@ public interface StudentService {
 	public void dropCourse();
 
 	public void viewGrades();
-	
-	public void addStudent();
-	
-	public void studentLogin();
+
 }

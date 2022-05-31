@@ -14,9 +14,9 @@ public interface AdminDaoInterface {
 
 	public void generateReportCard();
 
-	public List addCourse();
+	public List<Course> addCourse();
 	
-	public void removeCourse(List<Course> l);
+	public void removeCourse(List<Course> course);
 	
 
 }

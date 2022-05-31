@@ -44,41 +44,28 @@ public class AdminServiceImpl implements AdminService {
 
 	}
 
-	@Override
-	public void addUser() {
-		System.out.println("Welcome to registration page \n ");
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter UserName :");
-		String un = sc.next();
-		admin.setUserName(un);
-		System.out.println("Enter Password :");
-		String pwd = sc.next();
-		admin.setPassWord(pwd);
-		System.out.println("Registration succesfully \n ");
-		login();
 
-	}
 
-	@Override
-	public void login() {
-		CRSApplication adminApplication = new CRSApplication();
-
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter UserName :");
-		String userName = sc.next();
-		System.out.println("Enter Password :");
-		String password = sc.next();
-		if ((userName.equals(admin.getUserName())) && (password.equals(admin.getPassWord()))) {
-			System.out.println("Login Successfull");
-			loginList();
-
-		} else {
-			System.out.println(" In valid userName of password \n");
-			adminApplication.AdminMenu();
-			
-		}
-
-	}
+//	@Override
+//	public void login() {
+//		CRSApplication adminApplication = new CRSApplication();
+//
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("Enter UserName :");
+//		String userName = sc.next();
+//		System.out.println("Enter Password :");
+//		String password = sc.next();
+//		if ((userName.equals(admin.getUserName())) && (password.equals(admin.getPassWord()))) {
+//			System.out.println("Login Successfull");
+//			loginList();
+//
+//		} else {
+//			System.out.println(" In valid userName of password \n");
+//			adminApplication.AdminMenu();
+//			
+//		}
+//
+//	}
 
 	public void loginList() {
 		Scanner sc = new Scanner(System.in);

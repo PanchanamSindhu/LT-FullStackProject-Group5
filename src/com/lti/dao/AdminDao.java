@@ -61,7 +61,7 @@ public class AdminDao implements AdminDaoInterface {
 	}
 
 	@Override
-	public List addCourse() {
+	public List<Course> addCourse() {
 		List<Course> courseList = new ArrayList<Course>();
 		System.out.println(" Enter the no of  Courses to add");
 		Scanner sc = new Scanner(System.in);
