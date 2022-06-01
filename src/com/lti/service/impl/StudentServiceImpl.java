@@ -37,11 +37,18 @@ public class StudentServiceImpl implements StudentService {
 		StudentDao ssd = new StudentDao();
 		ArrayList resultlist = (ArrayList) ssd.viewCatalog();
 
-		System.out.println(" Courses:");
+		System.out.println(" Courses to Register :");
 		for (int i = 0; i < resultlist.size(); i++) {
-			System.out.println(i + 1 + "." + resultlist.get(i));
+			System.out.println(i + 1 + "." + resultlist.get(i) +"\n");
 		}
 
+	}
+	
+	@Override
+	public void viewStudents() {
+		
+		StudentDao studentDao = new StudentDao();
+		studentDao.StudentDetails();
 	}
 
 	@Override
@@ -68,7 +75,6 @@ public class StudentServiceImpl implements StudentService {
 
 		LocalDateTime localDateTime = LocalDateTime.now();
 		System.out.println("Student Logged in at:  " + localDateTime);
-		System.out.println("Menu");
 		System.out.println(
 				"1.Register a Course\n2.View GradeCard\n3.View Catalog\n4.Add/Delete Course \n5.Pay Fee\n6.Exit ");
 		Scanner sc = new Scanner(System.in);
@@ -77,35 +83,35 @@ public class StudentServiceImpl implements StudentService {
 		switch (input) {
 
 		case 1:
-			StudentServiceImpl ssc = new StudentServiceImpl();
-			ssc.viewCatalog();
+			viewCatalog();
 			System.out.println("Please select the Course\n");
 			String inp = sc.next();
-			ssc.registerCourse(inp);
+			registerCourse(inp);
 
 			break;
 
 		case 2:
-			StudentServiceImpl ssc1 = new StudentServiceImpl();
-			ssc1.viewreportcard();
+			viewreportcard();
 			studentMenu();
 			break;
 
 		case 3:
-			StudentServiceImpl ssc2 = new StudentServiceImpl();
-			ssc2.viewCatalog();
+			viewCatalog();
 			studentMenu();
 			break;
 
 		case 4:
-			StudentServiceImpl ssc3 = new StudentServiceImpl();
-			ssc3.course();
+			course();
 			studentMenu();
 			break;
 
 		case 5:
-			StudentServiceImpl ssc4 = new StudentServiceImpl();
-			ssc4.payFee();
+			payFee();
+			studentMenu();
+			break;
+		case 7:
+			
+			viewStudents();
 			studentMenu();
 			break;
 		case 6:

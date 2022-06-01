@@ -19,5 +19,7 @@ public interface StudentService {
 	public void payFee();
 
 	public void course();
+	
+	public void viewStudents();
 
 }

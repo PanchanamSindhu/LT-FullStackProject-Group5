@@ -9,6 +9,7 @@ import java.util.Scanner;
 import com.lti.bean.Login;
 import com.lti.dao.LoginRegDao;
 import com.lti.service.impl.AdminServiceImpl;
+import com.lti.service.impl.ProfessorServiceImpl;
 import com.lti.service.impl.StudentServiceImpl;
 
 /**
@@ -55,7 +56,6 @@ public class CRSApplication {
 			break;
 
 		case 2:
-
 			registration();
 			break;
 
@@ -69,20 +69,18 @@ public class CRSApplication {
 
 		}
 	}
+
 	/**
-	 * This method is used to close application.
+	 * This method is used to display login page. 
 	 * @param unused
 	 * @return nothing.
 	 */
-	private static void Exit() {
-		System.out.println("Application Closed");
-
-	}
-
 	public static void login() {
 		AdminServiceImpl adminApplication = new AdminServiceImpl();
 		StudentServiceImpl studentServiceImpl = new StudentServiceImpl();
+		ProfessorServiceImpl professorServiceImpl = new ProfessorServiceImpl();
 		LoginRegDao loginRegDao = new LoginRegDao();
+		System.out.println("--Login Page---\n");
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter UserName :");
 		String userName = sc.next();
@@ -91,13 +89,13 @@ public class CRSApplication {
 		List<Login> loginList = loginRegDao.verifyLogin();
 		for (Login login : loginList) {
 			if (login.getUserName().equalsIgnoreCase(userName) && (password.equals(login.getPassword()))) {
-				System.out.println("Login Successfull");
+				System.out.println("Login Successfull\n");
 				if (login.getType().equalsIgnoreCase("Admin")) {
 					adminApplication.loginList();
 				} else if (login.getType().equalsIgnoreCase("student")) {
 					studentServiceImpl.studentMenu();
 				} else if (login.getType().equalsIgnoreCase("Professor")) {
-					System.out.println("professor");
+					professorServiceImpl.professorMenu();
 				}
 
 			}
@@ -114,6 +112,11 @@ public class CRSApplication {
 		login();
 	}
 
+	/**
+	 * This method allows user to update password.
+	 * @param unused
+	 * @return nothing.
+	 */
 	public static void updatePassword() {
 
 		System.out.println(" Enter you Id ");
@@ -121,6 +124,16 @@ public class CRSApplication {
 		double id = sc.nextDouble();
 		LoginRegDao loginRegDao = new LoginRegDao();
 		loginRegDao.updatePassword(id);
+
+	}
+	
+	/**
+	 * This method is used to close application.
+	 * @param unused
+	 * @return nothing.
+	 */
+	private static void Exit() {
+		System.out.println("Application Closed");
 
 	}
 

@@ -21,5 +21,7 @@ public interface StudentDaoInterface {
 	public void viewFee();
 
 	public ArrayList course();
+	
+	public void StudentDetails();
 
 }

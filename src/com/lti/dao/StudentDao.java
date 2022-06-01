@@ -2,7 +2,9 @@ package com.lti.dao;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -16,16 +18,16 @@ public class StudentDao implements StudentDaoInterface {
 	@Override
 	public void registerCourse(String inp) {
 		if (inp.equals("Java")) {
-			System.out.println("Successfully Registered for Java Course");
+			System.out.println("Successfully Registered for Java Course\n");
 		} else if (inp.equals("Python")) {
-			System.out.println("Successfully Registered for Python Course");
+			System.out.println("Successfully Registered for Python Course\n");
 		} else if (inp.equals("Big Data")) {
-			System.out.println("Successfully Registered for Big data Course");
+			System.out.println("Successfully Registered for Big data Course\n");
 		} else if (inp.equals("Cloud")) {
-			System.out.println("Successfully Registered for Cloud Course");
+			System.out.println("Successfully Registered for Cloud Course\n");
 		} else {
 			try {
-				throw new CourseNotFoundException("InValid Option Chosen. Choose the valid option.");
+				throw new CourseNotFoundException("InValid Option Chosen. Choose the valid option.\n");
 			} catch (CourseNotFoundException e) {
 				System.out.println(e);
 			}
@@ -56,6 +58,13 @@ public class StudentDao implements StudentDaoInterface {
 			datalist.add("Java - A+");
 			datalist.add("Python - B");
 			datalist.add("Big data - A+");
+			datalist.add("Cloud - B");
+		}
+		if (i == 4) {
+			System.out.println("Report Card Generated fro ID :" + i);
+			datalist.add("Java - C");
+			datalist.add("Python - A+");
+			datalist.add("Big data - B");
 			datalist.add("Cloud - B");
 		}
 
@@ -153,6 +162,21 @@ public class StudentDao implements StudentDaoInterface {
 		System.out.println("Fee Paied Succesfully!!");
 
 	}
+	@Override
+	public void StudentDetails() {
+		// TODO Auto-generated method stub
+		HashMap<Integer, String> studentDetails = new HashMap<Integer, String>();
+		System.out.println("--StudentId--"+"--StudentName--");
+		studentDetails.put(1, "Ram");
+		studentDetails.put(2, "Sita");
+		studentDetails.put(3, "Laxman");
+		studentDetails.put(4, "Krishna");
+		studentDetails.put(5, "Bheema\n");
+		
+		for (Map.Entry sDetails : studentDetails.entrySet()) {
+			System.out.println(sDetails.getKey() + "-" + sDetails.getValue());
+		}
+	}
 
 	@Override
 	public ArrayList course() {
@@ -174,7 +198,7 @@ public class StudentDao implements StudentDaoInterface {
 			System.out.println("3. Enter 3 to add Big Data");
 			System.out.println("4. Enter 4 to add Cloud");
 			System.out.println("5. Enter 5 to see the list of Courses added");
-			System.out.println("6. Enter 6 to go back");
+			System.out.println("6. Enter 6 to View StudentMenu");
 
 			int course = sc.nextInt();
 			int i = 0;
