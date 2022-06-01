@@ -76,10 +76,12 @@ public class CRSApplication {
 	 * @return nothing.
 	 */
 	public static void login() {
+		
 		AdminServiceImpl adminApplication = new AdminServiceImpl();
 		StudentServiceImpl studentServiceImpl = new StudentServiceImpl();
 		ProfessorServiceImpl professorServiceImpl = new ProfessorServiceImpl();
 		LoginRegDao loginRegDao = new LoginRegDao();
+		
 		System.out.println("--Login Page---\n");
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter UserName :");
